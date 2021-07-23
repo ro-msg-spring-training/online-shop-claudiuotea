@@ -2,7 +2,9 @@ package ro.msg.learning.shop.Models;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
@@ -24,11 +26,17 @@ public class Product extends BaseEntity<Integer>{
     private BigDecimal Price;
     @Positive
     private Double Weight;
+
     @ManyToOne
+    @JoinColumn(name = "productcategory")
     private ProductCategory ProductCategory;
+
     @ManyToOne
+    @JoinColumn(name = "supplier")
     private Supplier Supplier;
+
     @NotBlank(message = "ImageUrl must be completed")
+    @Column(name = "imageurl")
     private String ImageUrl;
 
 }

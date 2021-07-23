@@ -1,16 +1,16 @@
 package ro.msg.learning.shop.DTOs;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Setter
 @Getter
 @ToString
+@NoArgsConstructor
 public class ProductDTO {
-    Integer Id;
+    //TODO: nu returneaza id-urile, doar NULL
+    Integer id;
     Integer CategoryId;
     String Name;
     String Description;
