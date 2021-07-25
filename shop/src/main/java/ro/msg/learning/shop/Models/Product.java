@@ -16,27 +16,28 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 public class Product extends BaseEntity<Integer>{
     @NotBlank(message = "Name must be completed")
-    private String Name;
+    private String name;
     @NotBlank(message = "Description must be completed")
-    private String Description;
+    private String description;
     @Positive
-    private BigDecimal Price;
+    private BigDecimal price;
     @Positive
-    private Double Weight;
+    private Double weight;
 
     @ManyToOne
-    @JoinColumn(name = "productcategory")
-    private ProductCategory ProductCategory;
+    @JoinColumn(name = "product_category")
+    private ProductCategory productCategory;
 
     @ManyToOne
     @JoinColumn(name = "supplier")
-    private Supplier Supplier;
+    private Supplier supplier;
 
     @NotBlank(message = "ImageUrl must be completed")
-    @Column(name = "imageurl")
-    private String ImageUrl;
+    @Column(name = "image_url")
+    private String imageUrl;
 
 }

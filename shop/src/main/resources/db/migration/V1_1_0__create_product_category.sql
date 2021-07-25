@@ -1,7 +1,7 @@
-CREATE TABLE IF NOT EXISTS `ProductCategory`(
+CREATE TABLE IF NOT EXISTS `Product_Category`(
 
-`Id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`Name` varchar(30),
-`Description` varchar(30),
-CONSTRAINT uq_product_category UNIQUE(Name)
+`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`name` varchar(30),
+`description` varchar(30),
+CONSTRAINT uq_product_category UNIQUE(name)
 )

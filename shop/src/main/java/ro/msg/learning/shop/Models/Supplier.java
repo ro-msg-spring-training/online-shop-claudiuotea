@@ -10,7 +10,8 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 public class Supplier extends BaseEntity<Integer>{
-   private String Name;
+   private String name;
 }

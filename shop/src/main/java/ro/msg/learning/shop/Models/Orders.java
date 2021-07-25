@@ -3,6 +3,7 @@ package ro.msg.learning.shop.Models;
 import lombok.*;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
@@ -12,14 +13,19 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
+@ToString
 @EqualsAndHashCode
-public class OrderTable extends BaseEntity<Integer>{
+public class Orders extends BaseEntity<Integer>{
     @ManyToOne
-    private Location ShippedFrom;
+    @JoinColumn(name= "shipped_from")
+    private Location shippedFrom;
     @ManyToOne
-    private Customer Customer;
-    private LocalDateTime CreatedAt;
+    @JoinColumn(name = "customer")
+    private Customer customer;
+    private LocalDateTime createdAt;
     @ManyToOne
-    private Address Adresss;
+    @JoinColumn(name = "address")
+    private Address address;
 
 }

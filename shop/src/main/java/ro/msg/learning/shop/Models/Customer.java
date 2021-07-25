@@ -8,14 +8,15 @@ import javax.persistence.Id;
 @Data
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class Customer extends BaseEntity<Integer> {
-    private String FirstName;
-    private String LastName;
-    private String Username;
-    private String Password;
-    private String EmailAddress;
+    private String firstName;
+    private String lastName;
+    private String username;
+    private String password;
+    private String emailAddress;
 
 }

@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `Supplier`(
 
-`Id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`Name` varchar(30),
-CONSTRAINT uq_supplier UNIQUE(Name)
+`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`name` varchar(30),
+CONSTRAINT uq_supplier UNIQUE(name)
 )

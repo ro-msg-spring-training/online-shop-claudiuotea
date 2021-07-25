@@ -1,8 +1,8 @@
-CREATE TABLE IF NOT EXISTS `OrderDetail`(
-`OrderObj` int,
-`Product` int,
-`Quantity` int,
-FOREIGN KEY (OrderObj) REFERENCES OrderTable(Id),
-FOREIGN KEY (Product) REFERENCES Product(Id),
-CONSTRAINT uq_order_detail UNIQUE(OrderObj,Product)
+CREATE TABLE IF NOT EXISTS `Order_Detail`(
+`orders` int,
+`product` int,
+`quantity` int,
+FOREIGN KEY (orders) REFERENCES Orders(id),
+FOREIGN KEY (product) REFERENCES Product(id),
+CONSTRAINT uq_order_detail UNIQUE(orders,product)
 )

@@ -1,11 +1,11 @@
-CREATE TABLE IF NOT EXISTS `OrderTable`(
-`Id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`ShippedFrom` int,
-`Customer` int,
-`CreatedAt` timestamp,
-`Address` int,
-FOREIGN KEY (ShippedFrom) REFERENCES Location(Id),
-FOREIGN KEY (Customer) REFERENCES Customer(Id),
-FOREIGN KEY (Address) REFERENCES Address(Id),
-CONSTRAINT uq_order UNIQUE(Customer,CreatedAt)
+CREATE TABLE IF NOT EXISTS `Orders`(
+`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`shipped_from` int,
+`customer` int,
+`created_at` timestamp,
+`address` int,
+FOREIGN KEY (shipped_from) REFERENCES Location(id),
+FOREIGN KEY (customer) REFERENCES Customer(id),
+FOREIGN KEY (address) REFERENCES Address(id),
+CONSTRAINT uq_order UNIQUE(customer,created_at)
 )

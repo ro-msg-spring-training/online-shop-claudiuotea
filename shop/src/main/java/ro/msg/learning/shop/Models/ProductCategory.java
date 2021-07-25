@@ -11,10 +11,10 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
-@Table(name = "productcategory")
 public class ProductCategory extends BaseEntity<Integer>{
-    private String Name;
-    private String Description;
+    private String name;
+    private String description;
 
 }

@@ -2,25 +2,28 @@ package ro.msg.learning.shop.Models;
 
 import lombok.*;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.*;
 
 @javax.persistence.Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@ToString
 @Setter
+@Builder
 @EqualsAndHashCode
-public class Stock extends BaseEntity<Integer>{
+@IdClass(StockId.class)
+public class Stock{
+    @Id
     @ManyToOne
-    @MapsId("product_id")
-    private Product Product;
+    @JoinColumn(name="product")
+    private Product product;
+
+    @Id
     @ManyToOne
-    @MapsId("location_id")
-    private Location Location;
-    private int Quantity;
+    @JoinColumn(name = "location")
+    private Location location;
+    private int quantity;
 
 }

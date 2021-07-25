@@ -2,9 +2,7 @@ package ro.msg.learning.shop.Models;
 
 import lombok.*;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.*;
 
 @javax.persistence.Entity
 @Data
@@ -12,13 +10,20 @@ import javax.persistence.MapsId;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
-public class OrderDetail extends BaseEntity<OrderDetailId>{
+@IdClass(OrderDetailId.class)
+@Builder
+public class OrderDetail{
+    @Id
     @ManyToOne
-    @MapsId("order_id")
-    private OrderTable OrderObj;
-    @ManyToOne
-    @MapsId("product_id")
-    private Product Product;
+    @JoinColumn(name = "orders")
+    private Orders orders;
 
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "product")
+    private Product product;
+
+    int quantity;
 }

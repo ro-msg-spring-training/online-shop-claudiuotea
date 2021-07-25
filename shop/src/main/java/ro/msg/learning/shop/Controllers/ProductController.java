@@ -9,11 +9,8 @@ import ro.msg.learning.shop.DTOs.ProductDTO;
 import ro.msg.learning.shop.DTOs.UpdateProductDTO;
 import ro.msg.learning.shop.Exceptions.ProductNotFound;
 import ro.msg.learning.shop.Models.Product;
-import ro.msg.learning.shop.Models.Supplier;
 import ro.msg.learning.shop.Services.Interfaces.IProductService;
 
-import javax.swing.text.html.Option;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,6 +53,9 @@ public class ProductController {
     @GetMapping(value = "/products")
     @ResponseBody
     public List<ProductDTO> readALlProducts(){
+
+        //TODO:remove this
+        productService.test();
         return productService.readAllProducts();
     }
 
@@ -64,4 +64,5 @@ public class ProductController {
         productService.deleteProduct(id);
         return ResponseEntity.ok("Success!");
     }
+
 }

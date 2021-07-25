@@ -14,10 +14,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 public class Revenue extends BaseEntity<Integer>{
     @ManyToOne
-    private Location Location;
-    LocalDate Date;
-    BigDecimal Sum;
+    private Location location;
+    LocalDate date;
+    BigDecimal sum;
 }

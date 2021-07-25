@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IProductService {
+    void test();
+
     Optional<Product> findProduct(int productId);
 
     void createProduct(String name, String description, BigDecimal price, double weight, int productCategoryId, int supplierId, String imageUrl);
@@ -22,4 +24,5 @@ public interface IProductService {
     List<ProductDTO> readAllProducts();
 
     void updateProduct(int id, String description, BigDecimal price, Double weight, String imageUrl, Integer supplierId);
+
 }

@@ -1,14 +1,14 @@
 CREATE TABLE IF NOT EXISTS `Product`(
 
-`Id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`Name` varchar(30),
-`Description` varchar(30),
-`Price` decimal,
-`Weight` float,
-`ProductCategory` int,
-`Supplier` int,
-`ImageUrl` varchar(30),
-FOREIGN KEY (ProductCategory) REFERENCES ProductCategory(Id),
-FOREIGN KEY (Supplier) REFERENCES Supplier(Id),
-CONSTRAINT uq_product UNIQUE(Name)
+`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`name` varchar(30),
+`description` varchar(30),
+`price` decimal,
+`weight` float,
+`product_category` int,
+`supplier` int,
+`image_url` varchar(30),
+FOREIGN KEY (product_category) REFERENCES Product_Category(Id),
+FOREIGN KEY (supplier) REFERENCES Supplier(Id),
+CONSTRAINT uq_product UNIQUE(name)
 )
