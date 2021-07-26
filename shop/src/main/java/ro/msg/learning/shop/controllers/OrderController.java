@@ -28,11 +28,10 @@ public class OrderController {
 
             //get the current user to find out the email
             Users currentUser = (Users) authentication.getPrincipal();
-            emailService.sendPlainMessage(currentUser.getEmail(), "Thanks for the order", "Thank you!");
-            emailService.sendHtmlMessage(currentUser.getEmail(), "Thanks for the order", "Thank you!");
+            emailService.sendPlainMessage(currentUser);
+            emailService.sendHtmlMessage(currentUser);
             return new ResponseEntity<>(order,HttpStatus.OK);
-        }
-        catch(RuntimeException | MessagingException ex){
+        } catch(Exception ex){
             return new ResponseEntity<>(null,HttpStatus.CONFLICT);
         }
     }
