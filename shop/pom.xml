@@ -92,6 +92,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-test-autoconfigure</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>net.ifok.mail</groupId>
+			<artifactId>mail-spring-boot-starter</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 
 
 	</dependencies>

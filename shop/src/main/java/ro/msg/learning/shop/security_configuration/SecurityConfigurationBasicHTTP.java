@@ -41,7 +41,10 @@ public class SecurityConfigurationBasicHTTP extends WebSecurityConfigurerAdapter
                         .authenticationEntryPoint(authenticationEntryPoint)
                 .and()
                 .csrf().disable();
-
+//        httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
+//                .authorizeRequests().antMatchers("/console/**").permitAll();
+//        httpSecurity.csrf().disable();
+//        httpSecurity.headers().frameOptions().disable();
     }
 
     @Bean
