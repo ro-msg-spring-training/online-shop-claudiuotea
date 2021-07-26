@@ -1,7 +1,6 @@
 package ro.msg.learning.shop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,13 +14,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import ro.msg.learning.shop.DTOs.OrderDTO;
-import ro.msg.learning.shop.Models.Location;
-import ro.msg.learning.shop.Models.Product;
-import ro.msg.learning.shop.Models.Stock;
-import ro.msg.learning.shop.Repositories.Interfaces.ILocationRepo;
-import ro.msg.learning.shop.Repositories.Interfaces.IProductRepo;
-import ro.msg.learning.shop.Repositories.Interfaces.IStockRepo;
+import ro.msg.learning.shop.dtos.OrderDTO;
+import ro.msg.learning.shop.models.Location;
+import ro.msg.learning.shop.models.Product;
+import ro.msg.learning.shop.models.Stock;
+import ro.msg.learning.shop.Repositories.interfaces.ILocationRepo;
+import ro.msg.learning.shop.Repositories.interfaces.IProductRepo;
+import ro.msg.learning.shop.Repositories.interfaces.IStockRepo;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
