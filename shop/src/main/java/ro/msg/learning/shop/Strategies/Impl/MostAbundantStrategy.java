@@ -30,6 +30,7 @@ public class MostAbundantStrategy implements ILocationStrategy {
                     .product(biggestStock.getProduct())
                     .location(biggestStock.getLocation())
                     .build());
+
         });
        return locationProducts;
     }

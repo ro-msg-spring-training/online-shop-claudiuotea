@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class OrderService implements IOrderService {
-    @Qualifier("singleStrategy")
+    @Qualifier("abundantStrategy")
     ILocationStrategy locationStrategy;
     IOrderRepo orderRepo;
     IAddressRepo addressRepo;

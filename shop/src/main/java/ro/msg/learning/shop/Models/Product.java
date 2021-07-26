@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @ToString
+@Builder
 @EqualsAndHashCode
 public class Product extends BaseEntity<Integer>{
     @NotBlank(message = "Name must be completed")

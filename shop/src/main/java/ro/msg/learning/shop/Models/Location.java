@@ -16,6 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@Builder
 @EqualsAndHashCode
 public class Location extends BaseEntity<Integer>{
     private String name;

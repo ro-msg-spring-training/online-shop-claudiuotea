@@ -1,9 +1,6 @@
 package ro.msg.learning.shop.DTOs;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
@@ -13,6 +10,7 @@ import java.util.HashMap;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class OrderDTO {
     Timestamp time;
     String city;
