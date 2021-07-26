@@ -2,6 +2,7 @@ package ro.msg.learning.shop.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ro.msg.learning.shop.DTOs.AddProductDTO;
@@ -9,6 +10,8 @@ import ro.msg.learning.shop.DTOs.ProductDTO;
 import ro.msg.learning.shop.DTOs.UpdateProductDTO;
 import ro.msg.learning.shop.Exceptions.ProductNotFound;
 import ro.msg.learning.shop.Models.Product;
+import ro.msg.learning.shop.Models.Users;
+import ro.msg.learning.shop.Repositories.Interfaces.IUserRepo;
 import ro.msg.learning.shop.Services.Interfaces.IProductService;
 
 import java.util.List;
@@ -17,7 +20,7 @@ import java.util.Optional;
 @Controller
 public class ProductController {
     @Autowired
-    IProductService productService;
+    private IProductService productService;
 
     @GetMapping(value = "/products/{id}")
     @ResponseBody
@@ -53,9 +56,6 @@ public class ProductController {
     @GetMapping(value = "/products")
     @ResponseBody
     public List<ProductDTO> readALlProducts(){
-
-        //TODO:remove this
-        productService.test();
         return productService.readAllProducts();
     }
 

@@ -32,28 +32,9 @@ public class ProductServiceImp implements IProductService {
     //TODO:use a class made by you instead of this
     private final ModelMapper modelMapper;
 
-    //TODO:remove this
-//    private final IStockRepo stockRepo;
-//    private final ILocationRepo locationRepo;
-//    @Qualifier("abundantStrategy")
-//    private final ILocationStrategy locationStrategy;
-
     @Override
     public void test(){
-        //Stock s = stockRepo.findByProductAndLocation(productRepo.findById(1).get(),locationRepo.findById(1).get());
-        //System.out.println(s.getQuantity());
-//        HashMap<Integer,Integer> prods = new HashMap<>();
-//        prods.put(2,100000);
-//        prods.put(3,1);
-//        prods.put(1,11);
-//        locationStrategy.getLocations(prods).forEach(s-> System.out.println(s.getProduct().getId()+"--"+s.getLocation().getId()+"--"+s.getQuantity()));
 
-//        HashMap<Integer,Integer> prods = new HashMap<>();
-//        prods.put(2,10);
-//        prods.put(3,1);
-//        prods.put(1,11);
-//        OrderDTO order = new OrderDTO(Timestamp.valueOf(LocalDateTime.now()),"Bucharest","omania","Tara","Da",prods);
-//        locationStrategy.getLocations(order.getProducts()).forEach(s-> System.out.println(s.getProduct().getId()+"--"+s.getLocation().getId()+"--"+s.getQuantity()));
     }
 
     @Override
@@ -102,7 +83,6 @@ public class ProductServiceImp implements IProductService {
         Supplier s = supplierRepo.findById(supplier).orElseThrow(()->new RuntimeException("Supplier doesn't exist!"));
         Product p = productRepo.findById(id).orElseThrow(() -> new RuntimeException("Product doesn't exist!"));
 
-        //TODO: use builder from LOMBOK here
         p.setDescription(description);
         p.setPrice(price);
         p.setWeight(weight);
